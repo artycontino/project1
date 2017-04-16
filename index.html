@@ -3,32 +3,83 @@
 <head>
 	<title>Yankees Trivia</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
-<body>
 <style>
 body{
 background: url("http://i1149.photobucket.com/albums/o600/artycontino/9484510-mlb-tampa-bay-rays-new-york-yankees-850x560_zpsj0aoqs6b.jpg");
 background-size: cover;
-background-position: center;
-background-color: black;
-
+background-repeat:no-repeat;
   }
+
 </style>
+<script>
+correctAnswers=[0,1,2,0];
+var AnsweredCorrectly=0;
+function start(){
+document.getElementById('quizstart').style.display="none";
+document.getElementById('question0').style.display="block";
+}
+function toggle(a,b){
+AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
+document.getElementById('question'+a).style.display="none";
+document.getElementById('question'+b).style.display="block";
+}
+function end(a){
+AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
+document.getElementById('question'+a).style.display="none";
+document.getElementById('summary').style.display="block";
+document.getElementById('result').innerHTML=AnsweredCorrectly;
+}
+</script>
+</head>
+<body>
+
 <div id="wrapperHeader">
-    <div id="header"><img src="http://i1149.photobucket.com/albums/o600/artycontino/53618b_lg_zpsfbozxpyp.jpeg">
+    <div id="header"><img src="http://i1149.photobucket.com/albums/o600/artycontino/pinstripetears_avatar_1469365399_zpsc097d9ae.jpg">
     </div>
   <div id=title><h1>Arty's New York Yankees Trivia Game</h1></div>
      <div class="clear"></div>
-
- 
-
-<body>
-
-<div class="bg"><h2 id="test_status"></h2>
-<div id="test"></div>
-    <audio autoplay loop controls>
- <sourc src="audio/cheering.wav" type="audio/wav">
+     <body>
+<div id="quizstart">
+    <button onclick="start()">START</button>
+</div>
+<FORM>
+<INPUT TYPE="button" onClick="history.go(0)" VALUE="New Game">
+</FORM>
+<div id="question0" style="display:none">
+<span class="question">Did Alex Rodriguez retire?</span><br>
+<input type="radio" name="ans0">Yes<br>
+<input type="radio" name="ans0">No<br>
+   <button onclick="toggle(0,1)">continue</button>
+</div>
+<div id="question1" style="display:none">
+<span class="question">How many ring do the Yankees have?</span><br>
+<input type="radio" name="ans1">13<br>
+<input type="radio" name="ans1">27<br>
+<input type="radio" name="ans1">28<br>
+   <button onclick="toggle(1,2)">continue</button>
+</div>
+<div id="question2" style="display:none">
+<span class="question">Who is remembered as the great bambino?</span><br>
+<input type="radio" name="ans2">Derek Jeter <br>
+<input type="radio" name="ans2">Joe Torre<br>
+<input type="radio" name="ans2">Babe Ruth<br>
+   <button onclick="toggle(2,3)">continue</button>
+</div>
+<div id="question3" style="display:none">
+<span class="question">Is Yankee stadium actually located in Nyc?</span><br>
+<input type="radio" name="ans3">Yes<br>
+<input type="radio" name="ans3">No<br>
+   <button onclick="end(3)">continue</button>
+</div>
+<div id="summary" style="display:none">
+you have <span id="result"></span> correct answers
+</div>
+<audio autoplay controls>
+  <source src="audio/cheering.wav" type="audio/ogg">
 </audio>
-<script type="text/javascript" src = 
+</body>
+<script type="text/javascript" src = "game.js"/>
+
 </html>
+
+

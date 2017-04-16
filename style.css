@@ -1,12 +1,18 @@
 
 
-#test{ border:blue 3px solid; padding:10px 40px 40px 40px; background-color:transparent; width:50%;
-margin:250px;}
+.question{
+	font-size: 35px;
+	background-color: lightgrey;
+	color:white;
+	border: blue 2px solid;
+}
 
 #wrapperHeader{
   border: blue 2px solid;
 	height: 80px;
 	background-color:lightgrey;
+	color:white;
+	color: white;
 
 }
 img {
@@ -39,13 +45,6 @@ img {
     border-radius:50%
 }
 
-#test{
- border:#5AB029 3px solid; 
- padding:10px 40px 40px 40px; 
- background-color:#E5FCE3; width:50%;
-}
-
-
 #title{
 	box-sizing: border-box;
 	width: 70%;
@@ -55,6 +54,9 @@ img {
 }
 .clear{
 	clear: both;
+}
+h1{
+	background-color: grey;
 }
 
 

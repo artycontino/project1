@@ -1,48 +1,22 @@
-var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
-var questions = [
-  ["What number did Derek JeTER wear?", "2", "5", "00",],
-   ["What number did Derek Jeter wear?", "2", "5", "00",],
-    ["What number did Derek JeTER wear?", "2", "5", "00",],  
-    ["What number did Derek JeTER wear?", "2", "5", "00",],
-  ];
-function get(x){
-  return document.getElementById(x);
-}
-function renderQuestion(){
-  test = get("test");
-  if(pos >= questions.length){
-    test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
-    get("test_status").innerHTML = "Test completed";
-    pos = 0;
-    correct = 0;
-    return false;
-  }
-  get("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
-  question = questions[pos][0];
-  chA = questions[pos][1];
-  chB = questions[pos][2];
-  chC = questions[pos][3];
-  test.innerHTML = "<h3>"+question+"</h3>";
-  test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
-  test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
-  test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
-  test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
-}
-function checkAnswer(){
-  choices = document.getElementsByName("choices");
-  for(var i=0; i<choices.length; i++){
-    if(choices[i].checked){
-      choice = choices[i].value;
-    }
-  }
+var correctAnswers=[0,1,2,0];{
 
-  if(choice == questions[pos][4]){
- 
-    correct++;
-  }
 
-  pos++;
+var AnsweredCorrectly=0;{
 
-  renderQuestion();
+
+function start(){
+document.getElementById('quizstart').style.display="none";
+document.getElementById('question0').style.display="block";
 }
-window.addEventListener("load", renderQuestion, false);
+function toggle(a,b){
+AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
+document.getElementById('question'+a).style.display="none";
+document.getElementById('question'+b).style.display="block";
+}
+function end(a){
+AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
+document.getElementById('question'+a).style.display="none";
+document.getElementById('summary').style.display="block";
+document.getElementById('result').innerHTML=AnsweredCorrectly;
+
+}
