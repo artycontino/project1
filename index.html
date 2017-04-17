@@ -12,22 +12,22 @@ background-repeat:no-repeat;
 
 </style>
 <script>
-correctAnswers=[0,1,2,0];// location of the answers in the arrays for questions 1-4
-var AnsweredCorrectly=0;// # of questions right beginning at 0
+correctAnswers=[0,1,2,0];
+var AnsweredCorrectly=0;
 function start(){
 document.getElementById('quizstart').style.display="none";
-document.getElementById('question0').style.display="block";// start function to go into quiz question array [0]
+document.getElementById('question0').style.display="block";
 }
-function toggle(a,b){// move from array question 0 to 1 to 2 to 3
-AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);?//giving value to ur radio select
+function toggle(a,b){
+AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
 document.getElementById('question'+a).style.display="none";
 document.getElementById('question'+b).style.display="block";
 }
-function end(a){// end ur questions and 
+function end(a){
 AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
 document.getElementById('question'+a).style.display="none";
-document.getElementById('summary').style.display="block";// give 
-document.getElementById('result').innerHTML=AnsweredCorrectly;// total questions answered
+document.getElementById('summary').style.display="block";
+document.getElementById('result').innerHTML=AnsweredCorrectly;
 }
 </script>
 </head>
@@ -38,18 +38,17 @@ document.getElementById('result').innerHTML=AnsweredCorrectly;// total questions
     </div>
   <div id=title><h1>Arty's New York Yankees Trivia Game</h1></div>
      <div class="clear"></div>
-     <body>
+
+
+<h1>Yankees Trivia</h1>
 <div id="quizstart">
     <button onclick="start()">START</button>
 </div>
-<FORM>
-<INPUT TYPE="button" onClick="history.go(0)" VALUE="New Game">
-</FORM>
 <div id="question0" style="display:none">
 <span class="question">Did Alex Rodriguez retire?</span><br>
 <input type="radio" name="ans0">Yes<br>
 <input type="radio" name="ans0">No<br>
-   <button onclick="toggle(0,1)">continue</button> 
+   <button onclick="toggle(0,1)">continue</button>
 </div>
 <div id="question1" style="display:none">
 <span class="question">How many ring do the Yankees have?</span><br>
