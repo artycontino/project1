@@ -1,8 +1,11 @@
-read me 
-1> created 3 functions to "start" the game than"toggle" to the next questions which is set up by an id  than called to by getelementid. 2>The "questions" are set with radio buttons to only be choosen once. in their of own id.
-3>The correct answeres r set in by array number only "if" that array number in the question id # is select it will render you a correct answer added to the "total number of correct answers"
-else it it will not add i++
-4> for more read me its in the html file
+<h1>Approach</h1>
+<ol>
+	<li>Creat a header with key frame for logo and tittle</li>
+	<li>Creat a start button</li>
+	<li>Creat a question with 3 choice</li>
+	<li>Create next button</li>
+	<<li>Have it tell how you did</li>
+</ol>
 
 <h1>Instructions</h1>
 <ol>
@@ -14,26 +17,29 @@ else it it will not add i++
   <li>You can than start a new game.</li>
 </ol>
 
-mvp								more than mvp
+<h1>Mvp</h1>
+<ol>
+	<li>Creat a header with tittle</li>
+	<li>Creat a start button</li>
+	<li>Creat 3 questions </li>
+	<li>Create next button</li>
 
-start 								keyframes
-continue
-new game buttons					sound
+</ol>
+<h1>More than Mvp</h1>
+<ol>
+	<li>Creat a header with logo keyframe</li>
+	<li>Creat a new game button</li>
+	<li>Creat a question with 3 choices to only be selcted once</li>
+	<li>sound</li>
+	<<li>background</li>
+</ol>
 
-atleast 3 questions					background
-
-win logic
-
-score keeper
-
-obstacles
-keyframe stop in position
-where in question is corret answer
-and how to move from question to question
-
-NO WIREFRAME
-
-Google and slack helped with keyframes
+<h1>OBSTACLES</h1>
+<ol>
+	<li>arrays</li>
+	<li>How to tell where correct answer is</li>
+	
+</ol>
 
 
 
