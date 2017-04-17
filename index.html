@@ -12,22 +12,22 @@ background-repeat:no-repeat;
 
 </style>
 <script>
-correctAnswers=[0,1,2,0];
-var AnsweredCorrectly=0;
+correctAnswers=[0,1,2,0];// location of the answers in the arrays for questions 1-4
+var AnsweredCorrectly=0;// # of questions right beginning at 0
 function start(){
 document.getElementById('quizstart').style.display="none";
-document.getElementById('question0').style.display="block";
+document.getElementById('question0').style.display="block";// start function to go into quiz question array [0]
 }
-function toggle(a,b){
-AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
+function toggle(a,b){// move from array question 0 to 1 to 2 to 3
+AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);?//giving value to ur radio select
 document.getElementById('question'+a).style.display="none";
 document.getElementById('question'+b).style.display="block";
 }
-function end(a){
+function end(a){// end ur questions and 
 AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
 document.getElementById('question'+a).style.display="none";
-document.getElementById('summary').style.display="block";
-document.getElementById('result').innerHTML=AnsweredCorrectly;
+document.getElementById('summary').style.display="block";// give 
+document.getElementById('result').innerHTML=AnsweredCorrectly;// total questions answered
 }
 </script>
 </head>
@@ -49,7 +49,7 @@ document.getElementById('result').innerHTML=AnsweredCorrectly;
 <span class="question">Did Alex Rodriguez retire?</span><br>
 <input type="radio" name="ans0">Yes<br>
 <input type="radio" name="ans0">No<br>
-   <button onclick="toggle(0,1)">continue</button>
+   <button onclick="toggle(0,1)">continue</button> 
 </div>
 <div id="question1" style="display:none">
 <span class="question">How many ring do the Yankees have?</span><br>
