@@ -10,25 +10,7 @@ background-size: cover;
 background-repeat:no-repeat;
   }
 </style>
-<script>
-correctAnswers=[0,1,2,0];
-var AnsweredCorrectly=0;
-function start(){
-document.getElementById('quizstart').style.display="none";
-document.getElementById('question0').style.display="block";
-}
-function toggle(a,b){
-AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
-document.getElementById('question'+a).style.display="none";
-document.getElementById('question'+b).style.display="block";
-}
-function end(a){
-AnsweredCorrectly+=(document.getElementsByName('ans'+a)[correctAnswers[a]].checked?1:0);
-document.getElementById('question'+a).style.display="none";
-document.getElementById('summary').style.display="block";
-document.getElementById('result').innerHTML=AnsweredCorrectly;
-}
-</script>
+
 </head>
 <body>
 
@@ -38,10 +20,9 @@ document.getElementById('result').innerHTML=AnsweredCorrectly;
   <div id=title><h1>Arty's New York Yankees Trivia Game</h1></div>
      <div class="clear"></div>
 
-
 <h1>Yankees Trivia</h1>
 <div id="quizstart">
-    <button onclick="start()">Play Ball!</button>
+    <button id="start">Play Ball!</button>
 </div>
 <div id="question0" style="display:none">
 <span class="question">Did Alex Rodriguez retire?</span><br>
@@ -78,7 +59,7 @@ you have <span id="result"></span> correct answers
 <audio autoplay controls>
   <source src="audio/cheering.wav" type="audio/ogg">
 </audio>
+<script src = "game.js"></script>
 </body>
-<script type="text/javascript" src = "game.js"/>
 
 </html>
