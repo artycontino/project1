@@ -41,7 +41,7 @@ document.getElementById('result').innerHTML=AnsweredCorrectly;
 
 <h1>Yankees Trivia</h1>
 <div id="quizstart">
-    <button onclick="start()">START</button>
+    <button onclick="start()">Play Ball!</button>
 </div>
 <div id="question0" style="display:none">
 <span class="question">Did Alex Rodriguez retire?</span><br>
@@ -72,6 +72,9 @@ document.getElementById('result').innerHTML=AnsweredCorrectly;
 <div id="summary" style="display:none">
 you have <span id="result"></span> correct answers
 </div>
+<FORM>
+<INPUT TYPE="button" onClick="history.go(0)" VALUE=" And thats the ball game!!New Game?">
+</FORM>
 <audio autoplay controls>
   <source src="audio/cheering.wav" type="audio/ogg">
 </audio>
